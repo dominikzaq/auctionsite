@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Auctions</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <ul class="nav nav-tabs" id="main_menu">
+        <li role="presentation"><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="profile.html">Profile</a></li>
+        <li role="presentation" class="active"><a href="auctions.html">Auctions</a></li>
+        <li role="presentation"><a href="myAuctions.html">My auctions</a></li>
+        <li role="presentation"><a href="newAuctions.html">New auction</a></li>
+    </ul>
+    <div class="row main_login">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 bigCenteredBox" style="padding-top: 100px;">
+            <div class="list-group">
+                <a class="list-group-item" onclick="toggleMoreInfo(this)" style="z-index: 10">
+                    <h4 class="list-group-item-heading">VW Bora Tanio Nówka Nie śmigany Polecam!!!!!</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <img src="http://pictures.trader.pl/eurotax/pictures/5/2f/7db16e7ff5a829f4ee1748599fb24b50.jpg" class="picture" />
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Brand:</h4> Volkswagen
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Model:</h4> Bora
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Color:</h4> Srebrny
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Localization:</h4> Złomowisko
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Current price:</h4> 39,50zł
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row moreInfo" style="display: none">
+                        <hr id="login-hr" class="my-4"/>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Description:</h4> Samochód został zbudowany na bazie płyty podłogowej VW A4 PQ34, która wykorzystana została do budowy m.in. Golfa IV[8], Škody Octavii I oraz Seata Toledo II. Pojazd jest lepiej wyposażoną wersją Golfa IV[7]. W 2007 roku wersja produkowana na rynku chiński przeszła face lifting. Przy okazji zmieniona została nazwa modelu na City Jetta.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Contact:</h4>+48 500 500 500
+                                <br />
+                                <form class="ng-pristine ng-valid">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" id="login-submit-button" class="btn btn-primary center-block">Send</button>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Seller:</h4> Janusz Nowak
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <form class="ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <label>Your price</label>
+                                    <input type="numer" class="form-control" placeholder="Your price" value="40"/>
+                                </div>
+                                <button type="button" id="login-submit-button" class="btn btn-success center-block">BID! <span class="glyphicon glyphicon-euro" aria-hidden="true"></span></button>
+                            </form>
+                            <p class="list-group-item-text">
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item" onclick="toggleMoreInfo(this)">
+                    <h4 class="list-group-item-heading">Woldzwagen Passat VW 1.9 TDI Kultowy silnik i design</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <img src="https://s-media-cache-ak0.pinimg.com/736x/f4/62/35/f462357fd391fc75cff66354595bcfb8.jpg" class="picture" />
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Brand:</h4> Volkswagen
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Model:</h4> Passat
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Color:</h4> Rdzawy
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Localization:</h4> Złomowisko
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Current price:</h4> 39,50zł
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row moreInfo" style="display: none">
+                        <hr id="login-hr" class="my-4"/>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Description:</h4> Samochód został zbudowany na bazie płyty podłogowej VW A4 PQ34, która wykorzystana została do budowy m.in. Golfa IV[8], Škody Octavii I oraz Seata Toledo II. Pojazd jest lepiej wyposażoną wersją Golfa IV[7]. W 2007 roku wersja produkowana na rynku chiński przeszła face lifting. Przy okazji zmieniona została nazwa modelu na City Jetta.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Contact:</h4>+48 500 500 500
+                                <br />
+                                <form class="ng-pristine ng-valid">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" id="login-submit-button" class="btn btn-primary center-block">Send</button>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Seller:</h4> Janusz Nowak
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <form class="ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <label>Your price</label>
+                                    <input type="numer" class="form-control" placeholder="Your price" value="40"/>
+                                </div>
+                                <button type="button" id="login-submit-button" class="btn btn-success center-block">BID! <span class="glyphicon glyphicon-euro" aria-hidden="true"></span></button>
+                            </form>
+                            <p class="list-group-item-text">
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item" onclick="toggleMoreInfo(this)">
+                    <h4 class="list-group-item-heading">VW Gulf w LPG - Lepszy Pałer Gamoniu!</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <img src="https://spplthumb.blob.core.windows.net/540x405/64/be/7d/volkswagen-golf-iii-3-gti-20-jahre-oryginal-immobilizer-golf-motoryzacja-wielkopolskie-203626292.jpg" class="picture" />
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Brand:</h4> Volkswagen
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Model:</h4> Golf
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Color:</h4> WieloColorowy
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Localization:</h4> Złomowisko
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Current price:</h4> 39,50zł
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row moreInfo" style="display: none">
+                        <hr id="login-hr" class="my-4"/>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Description:</h4> Samochód został zbudowany na bazie płyty podłogowej VW A4 PQ34, która wykorzystana została do budowy m.in. Golfa IV[8], Škody Octavii I oraz Seata Toledo II. Pojazd jest lepiej wyposażoną wersją Golfa IV[7]. W 2007 roku wersja produkowana na rynku chiński przeszła face lifting. Przy okazji zmieniona została nazwa modelu na City Jetta.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Contact:</h4>+48 500 500 500
+                                <br />
+                                <form class="ng-pristine ng-valid">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" id="login-submit-button" class="btn btn-primary center-block">Send</button>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Seller:</h4> Janusz Nowak
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <form class="ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <label>Your price</label>
+                                    <input type="numer" class="form-control" placeholder="Your price" value="40"/>
+                                </div>
+                                <button type="button" id="login-submit-button" class="btn btn-success center-block">BID! <span class="glyphicon glyphicon-euro" aria-hidden="true"></span></button>
+                            </form>
+                            <p class="list-group-item-text">
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item" onclick="toggleMoreInfo(this)">
+                    <h4 class="list-group-item-heading">Polo trololo harlekin</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <img src="http://bi.gazeta.pl/im/a1/8a/f8/z16288417Q,Volkswagen-Polo-Harlequin.jpg" class="picture" />
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Brand:</h4> Volkswagen
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Model:</h4> Polo
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Color:</h4> ładny
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Localization:</h4> Złomowisko
+                            </p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="list-group-item-text">
+                                <h4>Current price:</h4> 39,50zł
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row moreInfo" style="display: none">
+                        <hr id="login-hr" class="my-4"/>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Description:</h4> Samochód został zbudowany na bazie płyty podłogowej VW A4 PQ34, która wykorzystana została do budowy m.in. Golfa IV[8], Škody Octavii I oraz Seata Toledo II. Pojazd jest lepiej wyposażoną wersją Golfa IV[7]. W 2007 roku wersja produkowana na rynku chiński przeszła face lifting. Przy okazji zmieniona została nazwa modelu na City Jetta.
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Contact:</h4>+48 500 500 500
+                                <br />
+                                <form class="ng-pristine ng-valid">
+                                    <div class="form-group">
+                                        <label>Message</label>
+                                        <textarea class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <button type="submit" id="login-submit-button" class="btn btn-primary center-block">Send</button>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="list-group-item-text">
+                                <h4>Seller:</h4> Janusz Nowak
+                            </p>
+                        </div>
+                        <div class="col-md-3">
+                            <form class="ng-pristine ng-valid">
+                                <div class="form-group">
+                                    <label>Your price</label>
+                                    <input type="numer" class="form-control" placeholder="Your price" value="40"/>
+                                </div>
+                                <button type="button" id="login-submit-button" class="btn btn-success center-block">BID! <span class="glyphicon glyphicon-euro" aria-hidden="true"></span></button>
+                            </form>
+                            <p class="list-group-item-text">
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1"></div>
+    </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

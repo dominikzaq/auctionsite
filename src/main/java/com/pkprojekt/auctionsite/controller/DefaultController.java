@@ -12,4 +12,21 @@ public class DefaultController {
     public String index() {
         return "index";
     }
+    @GetMapping("/profile")
+    public String profile() {
+        return "profile";
+    }
+    @GetMapping("/auctions")
+    public String auction() {
+        return "auctions";
+    }
+    @GetMapping("/newAuctions")
+    public String newAuctions() {
+        return "newAuctions";
+    }
+
+    @GetMapping("/myAuctions")
+    public String myAuctions() {
+        return "myAuctions";
+    }
 }
