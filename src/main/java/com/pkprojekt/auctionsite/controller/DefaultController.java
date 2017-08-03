@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class DefaultController {
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index() {
         return "index";
     }
@@ -28,5 +28,10 @@ public class DefaultController {
     @GetMapping("/myAuctions")
     public String myAuctions() {
         return "myAuctions";
+    }
+
+    @GetMapping("/auctionsAfterLogged")
+    public String auctionsAfterLogged() {
+        return "auctionsAfterLogged";
     }
 }
