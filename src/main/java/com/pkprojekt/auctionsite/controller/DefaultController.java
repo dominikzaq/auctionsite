@@ -36,4 +36,9 @@ public class DefaultController {
         return "admin/home";
     }
 
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
+
 }

@@ -23,25 +23,15 @@ public class LoginController {
 
     private Login userLogin;
 
-    @GetMapping(value = "/registration")
-    public String registration(Model model) {
-        model.addAttribute("user", new User());
-        return "registration";
-    }
 
-    @PostMapping("/registration")
-    public String creatingSubmit(@ModelAttribute("user") User user) {
-        userService.createUser(user);
-        return "index";
-    }
-    @GetMapping("/index")
+    @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("login", new Login());
-        return "index";
+        return "login";
     }
 
 
-    @PostMapping("/index")
+    @PostMapping("/login")
     public String loginSubmit(@ModelAttribute Login login, Model model, HttpSession session) {
         if(login.checkAdmin()) {
             return "/admin/home";
@@ -49,6 +39,6 @@ public class LoginController {
 
         User u = userService.getByEmailAndPassword(login.getEmail(), login.getPassword());
         session.setAttribute("user1", u);
-        return u == null? "index" : "user/home";
+        return u == null? "login" : "user/home";
     }
 }
