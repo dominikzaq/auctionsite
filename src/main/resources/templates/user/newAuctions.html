@@ -3,33 +3,38 @@
 <head>
     <title>Profile</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../style.css" type="text/css" media="all" />
     <link rel="stylesheet" type="text/css"
           href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 
 <body>
+
     <ul class="nav nav-tabs" id="main_menu">
+        <li role="presentation"><a href="home.html">Home</a></li>
         <li role="presentation"><a href="profile.html">Profile</a></li>
         <li role="presentation"><a href="auctionsAfterLogged.html">Auctions</a></li>
         <li role="presentation"><a href="myAuctions.html">My auctions</a></li>
         <li role="presentation" class="active"><a href="newAuctions.html">New auction</a></li>
-        <li role="presentation"><a href="index.html">Log out</a></li>
+        <li role="presentation"><a href="../index.html">Log out</a></li>
     </ul>
+
+
     <div class="row main_login">
         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1"></div>
         <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10">
             <div class="jumbotron" style="margin-top: 100px;">
                 <h3>Add auction</h3>
                 <hr id="login-hr" class="my-4"/>
-                <form class="ng-pristine ng-valid">
+
+                <form class="ng-pristine ng-valid" action="#" th:action="@{/}" th:object="${auction}" method="post">
                     <div class="form-group">
                         <label>Auction label</label>
-                        <input type="text" class="form-control" placeholder="Auction label"/>
+                        <input type="text" th:field="*{}" class="form-control" placeholder="Auction label" required="true"/>
                     </div>
                     <div class="form-group">
                         <label>Brand</label>
-                        <select>
+                        <select required="true" th:field="*{email}">
                             <option value="volvo">Woldzwagen</option>
                             <option value="saab">Peżot</option>
                             <option value="mercedes">Kija</option>
@@ -39,19 +44,19 @@
                     </div>
                     <div class="form-group">
                         <label>Model</label>
-                        <input type="text" class="form-control" placeholder="Model"/>
+                        <input type="text" th:field="*{email}" class="form-control" placeholder="Model" required="true"/>
                     </div>
                     <div class="form-group">
                         <label>Color</label>
-                        <input type="text" class="form-control" placeholder="Color"/>
+                        <input type="text" th:field="*{email}"class="form-control" placeholder="Color" required="true"/>
                     </div>
                     <div class="form-group">
                         <label>Localization</label>
-                        <input type="text" class="form-control" placeholder="Localization"/>
+                        <input type="text" th:field="*{email}" class="form-control" placeholder="Localization" required="true"/>
                     </div>
                     <div class="form-group">
                         <label>Minium price</label>
-                        <input type="text" class="form-control" placeholder="Minimum price"/>
+                        <input type="text" th:field="*{email}" class="form-control" placeholder="Minimum price" required="true"/>
                     </div>
                     <div class="form-group">
                         <label>Picture</label>
@@ -63,6 +68,8 @@
         </div>
         <div class="col-lg-3 col-md-3 col-sm-2 col-xs-1"></div>
     </div>
+
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="script.js"></script>

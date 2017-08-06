@@ -14,7 +14,7 @@ public class DefaultController {
     }
     @GetMapping("/profile")
     public String profile() {
-        return "profile";
+        return "user/profile";
     }
     @GetMapping("/auctions")
     public String auction() {
@@ -22,16 +22,22 @@ public class DefaultController {
     }
     @GetMapping("/newAuctions")
     public String newAuctions() {
-        return "newAuctions";
+        return "admin/newAuctions";
     }
 
     @GetMapping("/myAuctions")
     public String myAuctions() {
-        return "myAuctions";
+        return "admin/myAuctions";
     }
 
     @GetMapping("/auctionsAfterLogged")
     public String auctionsAfterLogged() {
-        return "auctionsAfterLogged";
+        return "admin/auctionsAfterLogged";
     }
+
+    @GetMapping("/home")
+    public String home() {
+        return "admin/home";
+    }
+
 }
