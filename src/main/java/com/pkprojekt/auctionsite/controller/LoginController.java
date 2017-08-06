@@ -24,7 +24,7 @@ public class LoginController {
     private Login userLogin;
 
 
-    @GetMapping("/login")
+    @GetMapping({"/","/login"})
     public String login(Model model) {
         model.addAttribute("login", new Login());
         return "login";
