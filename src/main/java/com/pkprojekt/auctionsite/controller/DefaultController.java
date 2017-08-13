@@ -16,27 +16,28 @@ public class DefaultController {
     public String auction() {
         return "auctions";
     }
-    @GetMapping("/newAuctions")
-    public String newAuctions() {
-        return "admin/newAuctions";
-    }
 
     @GetMapping("/myAuctions")
     public String myAuctions() {
-        return "admin/myAuctions";
+        return "user/myAuctions";
     }
 
     @GetMapping("/auctionsAfterLogged")
     public String auctionsAfterLogged() {
-        return "admin/auctionsAfterLogged";
+        return "user/auctionsAfterLogged";
     }
 
-    @GetMapping("/home")
-    public String home() {
-        return "admin/home";
+    @GetMapping("/homeAdmin")
+    public String homeAdmin() {
+        return "admin/homeAdmin";
     }
 
-    @GetMapping("/index")
+    @GetMapping("/homeUser")
+    public String homeUser() {
+        return "user/homeUser";
+    }
+
+    @GetMapping({"/","/index"})
     public String index() {
         return "index";
     }

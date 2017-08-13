@@ -21,10 +21,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    private Login userLogin;
-
-
-    @GetMapping({"/","/login"})
+    @GetMapping({"/login"})
     public String login(Model model) {
         model.addAttribute("login", new Login());
         return "login";
@@ -34,11 +31,11 @@ public class LoginController {
     @PostMapping("/login")
     public String loginSubmit(@ModelAttribute Login login, Model model, HttpSession session) {
         if(login.checkAdmin()) {
-            return "/admin/home";
+            return "/admin/homeAdmin";
         }
 
         User u = userService.getByEmailAndPassword(login.getEmail(), login.getPassword());
         session.setAttribute("user1", u);
-        return u == null? "login" : "user/home";
+        return u == null? "index" : "user/homeUser";
     }
 }
