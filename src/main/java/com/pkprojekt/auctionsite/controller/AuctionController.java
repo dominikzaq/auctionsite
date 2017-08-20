@@ -2,6 +2,7 @@ package com.pkprojekt.auctionsite.controller;
 
 import com.pkprojekt.auctionsite.domain.Auction;
 import com.pkprojekt.auctionsite.domain.User;
+import com.pkprojekt.auctionsite.service.AuctionService;
 import com.pkprojekt.auctionsite.service.impl.AuctionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AuctionController {
 
     @Autowired
-    private AuctionServiceImpl auctionService;
+    private AuctionService auctionService;
 
     @GetMapping("/newAuctions")
     public String createAuction(Model model) {

@@ -35,7 +35,7 @@ public class LoginController {
             return "/admin/homeAdmin";
         }
 
-        User u = loginService.getByEmailAndPassword(login.getEmail(), login.getPassword());
+        User u = loginService.getByEmailAndPasswordAndLock(login.getEmail(), login.getPassword());
         session.setAttribute("user1", u);
         return u == null? "index" : "user/homeUser";
     }

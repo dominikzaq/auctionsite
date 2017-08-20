@@ -15,19 +15,19 @@
             <input type="text" class="form-control" id="usr"/>
         </div>
         <form>
-            <label>Type id:</label>
+            <label>Type email:</label>
             <input type="text" />
             <button type="button" class="btn btn-primary">delete account</button>
         </form>
 
         <form>
-            <label>Type id:</label>
+            <label>Type email:</label>
             <input type="text" />
             <button type="button" class="btn btn-primary">Lock account</button>
         </form>
 
         <form>
-            <label>Type id:</label>
+            <label>Type email:</label>
             <input type="text" />
             <button type="button" class="btn btn-primary">Unlock account</button>
         </form>
@@ -45,10 +45,10 @@
                 </thead>
                 <tbody>
                 <tr data-th-each="user : ${users}">
-                    <td data-th-text="${user.id}"/>
+                    <td data-th-text="${user.idUser}"/>
                     <td data-th-text="${user.firstName}"/>
                     <td data-th-text="${user.lastName}"/>
-                    <td data-th-text="${user.isLock}"/>
+                    <td data-th-text="${user.lock}"/>
                 </tr>
                 </tbody>
             </table>

@@ -26,7 +26,7 @@ public class RegisterController {
 
     @PostMapping("/registration")
     public String creatingSubmit(@ModelAttribute User user) {
-        user.setLogin(true);
+        user.setLock(false);
         userService.createUser(user);
         return "index";
     }
