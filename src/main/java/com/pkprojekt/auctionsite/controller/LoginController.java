@@ -2,6 +2,7 @@ package com.pkprojekt.auctionsite.controller;
 
 import com.pkprojekt.auctionsite.domain.User;
 import com.pkprojekt.auctionsite.login.Login;
+import com.pkprojekt.auctionsite.service.LoginService;
 import com.pkprojekt.auctionsite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
     @Autowired
-    private UserService userService;
+    private LoginService loginService;
 
     @GetMapping({"/login"})
     public String login(Model model) {
@@ -34,7 +35,7 @@ public class LoginController {
             return "/admin/homeAdmin";
         }
 
-        User u = userService.getByEmailAndPassword(login.getEmail(), login.getPassword());
+        User u = loginService.getByEmailAndPassword(login.getEmail(), login.getPassword());
         session.setAttribute("user1", u);
         return u == null? "index" : "user/homeUser";
     }

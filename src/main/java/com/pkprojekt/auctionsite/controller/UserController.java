@@ -1,5 +1,6 @@
 package com.pkprojekt.auctionsite.controller;
 
+import com.pkprojekt.auctionsite.domain.User;
 import com.pkprojekt.auctionsite.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Controller;
  */
 
 @Controller
-public class UserRepository {
+public class UserController {
 
     @Autowired
     UserService userService;
@@ -24,4 +25,5 @@ public class UserRepository {
 
     public void unlockUserByEmail(String email) {
     }
+
 }
