@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +28,6 @@ public class UserController {
         userService.deleteUserById(id);
     }
 
-    public void lockUserByEmail(int id) {
-        userService.lockUserById(id);
-    }
-
     public void unlockUserByEmail(int id) {
         unlockUserByEmail(id);
     }
@@ -41,4 +40,25 @@ public class UserController {
         return "/admin/searchUser";
     }
 
+    @RequestMapping(value = "/deleteUser/{userId}", method = RequestMethod.GET)
+    public String handleDeleteUser(@PathVariable("userId") String userId) {
+          System.out.println(userId);
+
+/*
+        userService.deleteUserById(Integer.valueOf(userId));
+*/
+        return "redirect:/searchUser";
+    }
+
+    @RequestMapping(value = "/makeLockOrUnlock/{userId}/{isLock}", method = RequestMethod.GET)
+    public String handleLockOrUnlock(@PathVariable String userId, @PathVariable String isLock) {
+//
+//        if(Boolean.parseBoolean(isLock) == true) {
+//
+//        } else {
+//
+//        }
+
+        return "redirect:/searchUser";
+    }
 }

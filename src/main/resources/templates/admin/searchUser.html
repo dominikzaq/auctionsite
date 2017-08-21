@@ -9,28 +9,6 @@
 </head>
 
 <body>
-    <form>
-        <div class="form-group" th:action="@{registration}" th:object="${user}" method="post">
-            <label for="usr">Type email:</label>
-            <input type="text" class="form-control" id="usr"/>
-        </div>
-        <form>
-            <label>Type email:</label>
-            <input type="text" />
-            <button type="button" class="btn btn-primary">delete account</button>
-        </form>
-
-        <form>
-            <label>Type email:</label>
-            <input type="text" />
-            <button type="button" class="btn btn-primary">Lock account</button>
-        </form>
-
-        <form>
-            <label>Type email:</label>
-            <input type="text" />
-            <button type="button" class="btn btn-primary">Unlock account</button>
-        </form>
 
         <div class="container">
 
@@ -41,6 +19,8 @@
                     <th>Firstname:</th>
                     <th>Lastname:</th>
                     <th>Is lock?</th>
+                    <th>Do you want delete account?</th>
+                    <th>Do you want lock or unlock account?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,13 +29,13 @@
                     <td data-th-text="${user.firstName}"/>
                     <td data-th-text="${user.lastName}"/>
                     <td data-th-text="${user.lock}"/>
+                    <td><a th:href="@{/deleteUser/(userId=${user.idUser})}" class="btn btn-danger">Delete</a></td>
+                    <td><a th:href="@{/makeLockOrUnlock/${user.idUser}/${user.lock}}" class="btn btn-danger">make</a></td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-
-    </form>
 
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
