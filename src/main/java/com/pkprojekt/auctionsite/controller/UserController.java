@@ -41,23 +41,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/deleteUser/{userId}", method = RequestMethod.GET)
-    public String handleDeleteUser(@PathVariable("userId") String userId) {
-          System.out.println(userId);
-
-/*
+    public String handleDeleteUser(@PathVariable("userId") Integer userId) {
         userService.deleteUserById(Integer.valueOf(userId));
-*/
         return "redirect:/searchUser";
     }
 
     @RequestMapping(value = "/makeLockOrUnlock/{userId}/{isLock}", method = RequestMethod.GET)
-    public String handleLockOrUnlock(@PathVariable String userId, @PathVariable String isLock) {
-//
-//        if(Boolean.parseBoolean(isLock) == true) {
-//
-//        } else {
-//
-//        }
+    public String handleLockOrUnlock(@PathVariable Integer userId, @PathVariable Boolean isLock) {
+        if(isLock) {
+            userService.lockOrUnlockUserById(userId, false);
+        } else {
+            userService.lockOrUnlockUserById(userId, true);
+        }
 
         return "redirect:/searchUser";
     }

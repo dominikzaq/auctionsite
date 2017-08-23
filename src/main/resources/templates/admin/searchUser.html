@@ -29,8 +29,8 @@
                     <td data-th-text="${user.firstName}"/>
                     <td data-th-text="${user.lastName}"/>
                     <td data-th-text="${user.lock}"/>
-                    <td><a th:href="@{/deleteUser/(userId=${user.idUser})}" class="btn btn-danger">Delete</a></td>
-                    <td><a th:href="@{/makeLockOrUnlock/${user.idUser}/${user.lock}}" class="btn btn-danger">make</a></td>
+                    <td><a th:href="@{'/deleteUser/' + ${user.idUser}}" class="btn btn-danger">Delete</a></td>
+                    <td><a th:href="@{'/makeLockOrUnlock/' + ${user.idUser}+'/'+${user.lock}}" class="btn btn-danger">make</a></td>
                 </tr>
                 </tbody>
             </table>
